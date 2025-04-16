@@ -2,7 +2,10 @@ import React from 'react';
 import Sidebar from '@/Components/Sidebar';
 import Footer from '@/Components/Footer';
 
-export default function AppLayout({ children }) {
+export default function AppLayout({ 
+  children, 
+  footerProps = {} // Default empty object for footer props
+}) {
     return (
         <div className="flex min-h-screen">
             {/* Sidebar with elevated z-index to ensure it stays above content */}
@@ -17,8 +20,8 @@ export default function AppLayout({ children }) {
                     {children}
                 </div>
                 
-                {/* Footer */}
-                <Footer />
+                {/* Footer with custom props */}
+                <Footer {...footerProps} />
             </main>
         </div>
     );

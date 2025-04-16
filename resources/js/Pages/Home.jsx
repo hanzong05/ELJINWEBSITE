@@ -146,6 +146,15 @@ const signatureDesserts = [
 ];
 
 export default function Home() {
+
+    const footerProps = {
+        title: "Taste the Magic of BW SUPERBAKESHOP",
+        description: "Freshly baked goods made with love and tradition. Order online or visit our store today!",
+        primaryButtonText: "Order Now",
+        primaryButtonUrl: "/order",
+        secondaryButtonText: "Our Locations",
+        secondaryButtonUrl: "/locations"
+    };
   // State for the current selected mood recommendation
   const [selectedMood, setSelectedMood] = useState(null);
   
@@ -265,7 +274,7 @@ export default function Home() {
       />
       
       {/* Main content starts here, all with higher z-index */}
-      <AppLayout>
+      <AppLayout footerProps={footerProps}>
         <Head title="Home" />
         
         <div className="relative z-10"> {/* This wrapper ensures all content is above the video */}
@@ -575,7 +584,7 @@ export default function Home() {
             </div>
           </section>
           
-        
+  
         </div>
       </AppLayout>
     </>
